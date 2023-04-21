@@ -2,32 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace _8_Condicionais2
+class Programa
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        double salario = 3300.0;
+
+        //ifs aqui
+        if (salario >= 1900.0 && salario <= 2800.0)
         {
-            Console.WriteLine("Executando projeto 8 - Condicionais 2");
-
-            int idadeJoao = 16;
-            int quantidadePessoas = 2;
-
-            bool acompanhado = quantidadePessoas >= 2;
-
-            //1º caso com codicional ou:   if (idadeJoao >= 18 || quantidadePessoas >= 2)
-            //Podemos também fazer o teste com o condicional e (que no CSharp é representado por &&)
-            if (idadeJoao >= 18 && acompanhado == true)
-            {
-                Console.WriteLine("Pode entrar.");
-            }
-            else
-            {
-                Console.WriteLine("Não pode entrar");
-            }
-            Console.ReadLine();
+            Console.WriteLine("Seu IR é de 7.5% e pode deduzir na declaração o valor de R$ 142");
+        }
+        else if (salario >= 2800.01 && salario <= 3751.0)
+        {
+            Console.WriteLine("Seu IR é de 15% e pode deduzir R$ 350");
+        }
+        else if (salario >= 3751.0 && salario <= 4664.0)
+        {
+            Console.WriteLine("Seu IR é de 22.5% e pode deduzir R$ 636");
         }
     }
 }
