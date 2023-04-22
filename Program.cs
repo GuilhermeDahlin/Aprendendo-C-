@@ -7,20 +7,21 @@ class Programa
 {
     static void Main(string[] args)
     {
-        double salario = 3300.0;
+        Console.WriteLine("Executando o projeto 12");
 
-        //ifs aqui
-        if (salario >= 1900.0 && salario <= 2800.0)
+        double valorInvestido = 1000;
+        double fatorRendimento = 1.0036;
+
+        for (int contadorAno = 1; contadorAno <= 5; contadorAno++)
         {
-            Console.WriteLine("Seu IR é de 7.5% e pode deduzir na declaração o valor de R$ 142");
+            for (int contadorMes =1; contadorMes <= 12; contadorMes++)
+            {
+                valorInvestido *= fatorRendimento;
+            }
+            fatorRendimento += 0.0010;
+            
         }
-        else if (salario >= 2800.01 && salario <= 3751.0)
-        {
-            Console.WriteLine("Seu IR é de 15% e pode deduzir R$ 350");
-        }
-        else if (salario >= 3751.0 && salario <= 4664.0)
-        {
-            Console.WriteLine("Seu IR é de 22.5% e pode deduzir R$ 636");
-        }
+        Console.WriteLine("Ao término do investimento, você terá R$ " + valorInvestido);
+        Console.ReadLine();
     }
 }
