@@ -3,25 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-class Programa
+class Program
 {
-    static void Main(string[] args)
+    static void Main(String[] args)
     {
-        Console.WriteLine("Executando o projeto 12");
+        Console.WriteLine("Executando Projeto 13");
 
-        double valorInvestido = 1000;
-        double fatorRendimento = 1.0036;
+        // Queremos ter uma espécie de saída como essa:
+        //*
+        //**
+        //***     Tendo um for pra cada linha e cada coluna
+        //****
+        //*****
 
-        for (int contadorAno = 1; contadorAno <= 5; contadorAno++)
+        // Escrevendo asteriscos com o BREAK 
+
+        for (int contadorLinha = 0; contadorLinha < 10; contadorLinha++)
         {
-            for (int contadorMes =1; contadorMes <= 12; contadorMes++)
+            for (int contadorColuna = 0; contadorColuna < 10; contadorColuna++)
             {
-                valorInvestido *= fatorRendimento;
+                Console.Write("*");
+                if (contadorColuna >= contadorLinha)
+                    break;
             }
-            fatorRendimento += 0.0010;
-            
         }
-        Console.WriteLine("Ao término do investimento, você terá R$ " + valorInvestido);
+        Console.WriteLine();
+        // Quando se escreve o WriteLine sem nada (sem nenhum argumento), ele simplesmente pula a linha
+
+
+        // Uma forma diferente de fazer o desenho de asteríscos
+        for (int contadorLinha = 0; contadorLinha < 10; contadorLinha++)
+        {
+            for (int contadorColuna = 0; contadorColuna <= contadorLinha; contadorColuna++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
         Console.ReadLine();
     }
 }
